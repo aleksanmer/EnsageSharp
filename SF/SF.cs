@@ -86,7 +86,7 @@
                 str += onlyKills ? ", Only kills" : "";
                 str += active ? ", Active" : "";
                 str += " ]";
-                str += " P - Toggle, L - Only Kills, D - Auto Raze";
+                str += " P - Toggle, L - Only Kills, T - Auto Raze";
 
                 text.DrawText(null, str, 5, 40, Color.DarkGreen);
             }
@@ -113,9 +113,9 @@
                     return;
                 }
                 loaded = true;
-                shadowRaze[0] = me.Spellbook.SpellQ;
-                shadowRaze[1] = me.Spellbook.SpellW;
-                shadowRaze[2] = me.Spellbook.SpellE;
+                shadowRaze[0] = me.Spellbook.Spell1;
+                shadowRaze[1] = me.Spellbook.Spell2;
+                shadowRaze[2] = me.Spellbook.Spell3;
                 Console.WriteLine("SF Helper (" + VERSION + "): Loaded!");
             }
 
@@ -173,7 +173,7 @@
         {
             if (!Game.IsChatOpen)
             {
-                if (Game.IsKeyDown(System.Windows.Input.Key.D)) active = true;
+                if (Game.IsKeyDown(System.Windows.Input.Key.T)) active = true;
                 else active = false;
                 //
                 switch (args.Msg)
